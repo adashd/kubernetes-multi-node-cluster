@@ -1,0 +1,7 @@
+kubectl get nodes
+kubectl label node ip-172-31-35-163.ap-south-1.compute.internal  node-role.kubernetes.io/worker=worker
+
+
+kubectl cluster-info
+#to check components are ok or not
+kubectl get --raw='/readyz?verbose'
