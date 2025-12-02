@@ -1,0 +1,15 @@
+#run this command on master node
+kubeadm init --pod-network-cidr=192.168.0.0/16
+
+
+#to run kubectl commands, run below 3 commands
+mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+
+#test kubeadm command
+kubectl get pods -n kube-system
+
+#cri-o command
+crictl images
